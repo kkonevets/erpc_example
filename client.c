@@ -4,6 +4,7 @@
 #include <erpc_mbf_setup.h>
 #include <erpc_client_setup.h>
 
+#include <stdio.h>
 
 void example_client(void)
 {
@@ -19,8 +20,9 @@ void example_client(void)
     /* init eRPC client IO service */
     initIO_client(client_manager);
 
-    // Now we can call the remote function to turn on the green LED.
-    set_led(kGreen, true);
+    // Now we can call the remote function
+    char* answer = say_hi("Kirill");
+    printf("%s\n", answer);
 
     /* deinit objects */
     deinitIO_client();

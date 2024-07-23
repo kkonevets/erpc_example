@@ -5,12 +5,19 @@
 #include "erpc_mbf_setup.h"
 #include "erpc_server_setup.h"
 
+#include <stdio.h>
+#include <memory.h>
+#include <stdlib.h>
 
 // Implement the remote function.
-void set_led(LEDName whichLed, bool onOrOff)
+char* say_hi(const char* name)
 {
-    // implementation goes here
+    char* str = malloc(4 + strlen(name));
+    strcpy(str, "Hi, ");
+    strcpy(str + 4, name);
+    return str;
 }
+
 
 void example_server(void)
 {
