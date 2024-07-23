@@ -1,0 +1,8 @@
+// Define a data type.
+enum LEDName { kRed, kGreen, kBlue }
+
+// An interface is a logical grouping of functions.
+interface IO {
+    // Simple function declaration with an empty reply.
+    set_led(LEDName whichLed, bool onOrOff) -> void
+}
